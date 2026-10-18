@@ -532,6 +532,43 @@ img,.art,.mini,.cv,.pl,.big,.bd,.fr3-mat{-webkit-user-drag:none;-webkit-touch-ca
 img{pointer-events:none}
 @media print{html,body{display:none!important}}
 
+/* ===== mobile: vertical artists + scrolling gallery ===== */
+.mlist{display:none}
+@media (max-width:760px){
+  .artists{height:auto!important}
+  .a-stage{position:relative;height:auto;overflow:visible}
+  .a-stage::before,.a-topo,.a-count{display:none}
+  .a-track{position:relative;left:auto;top:auto;height:auto;display:flex;flex-direction:column;align-items:stretch;gap:46px;padding:calc(var(--hh) + 18px) var(--gutr) 64px var(--gut);transform:none!important;will-change:auto}
+  .a-intro{width:auto;margin:0;align-self:auto}
+  .a-intro h2{font-size:clamp(2.2rem,10vw,3rem)}
+  .a-intro .sl{display:none}
+  .ac{width:min(100%,380px);margin:0 auto;transform:none!important;will-change:auto}
+  .ac-ph{height:auto;width:100%;aspect-ratio:4/5}
+  .ac-ph .pl{inset:0;transform:none!important}
+  .ac h3{font-size:1.6rem}
+  .ac p{font-size:16px}
+  .a-end{width:auto;margin:6px 0 0;align-self:auto}
+  .a-end h2{font-size:clamp(1.9rem,8vw,2.6rem)}
+  #v-gallery.mob .gal,#v-gallery.mob .hud,#v-gallery.mob #exitGal,#v-gallery.mob .empty{display:none!important}
+  #v-gallery.mob{background:linear-gradient(#F1F2F4,#DADDE1);-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+  .mlist{display:block;padding:calc(var(--hh) * 0 + 24px) var(--gutr) calc(40px + env(safe-area-inset-bottom,0px)) var(--gut)}
+  .ml-head{text-align:center;padding:18px 4px 34px}
+  .ml-head h2{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,9vw,2.8rem);line-height:1.05;margin:10px 0 10px}
+  .ml-head p{margin:0 auto;max-width:22em;color:#3B3F46;font-size:17px}
+  .mp{display:flex;flex-direction:column;align-items:center;gap:20px;padding:30px 0 40px;opacity:0;transform:translateY(34px) scale(.97);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+  .mp.in{opacity:1;transform:none}
+  .mp-pic{display:block;border:0;padding:0;background:none;width:min(88vw,calc(62vh * var(--ar)),460px);aspect-ratio:var(--ar);outline:8px solid #fff;box-shadow:0 0 0 9px rgba(17,17,17,.10),0 26px 40px -18px rgba(17,17,17,.55);-webkit-tap-highlight-color:transparent}
+  .mp-pic .cv{display:block;width:100%;height:100%}
+  .mp-lbl{text-align:center}
+  .mp-lbl b{display:block;font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.35rem;color:#16161A}
+  .mp-lbl i{display:block;font-style:normal;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#555A63;margin-top:3px}
+  .ml-end{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;padding:30px 0 10px}
+  .ml-end svg{width:120px;height:120px;color:rgba(168,124,12,.5);opacity:.9}
+  .ml-end p{margin:0;font-family:var(--brand);font-size:1.15rem;color:#16161A}
+  @media (prefers-reduced-motion:reduce){.mp{opacity:1;transform:none;transition:none}}
+}
+.ml-end .rg-paths path{animation:none;stroke-dashoffset:0}.ml-end .rg-dots circle{animation:none;transform:none}
+
 </style>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="rgS" viewBox="0 0 240 240"><path d="M16 16 L224 16 L224 224 L16 224 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M24 24 L216 24 L216 216 L24 216 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M120 24 L216 120 L120 216 L24 120 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M72 72 L168 72 L168 168 L72 168 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M120 72 L168 120 L120 168 L72 120 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M120 120 Q101 94.7 120 74 Q139 94.7 120 120 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M120 120 Q123.6 98 143.3 96.7 Q142 116.4 120 120 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M120 120 Q145.3 101 166 120 Q145.3 139 120 120 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M120 120 Q142 123.6 143.3 143.3 Q123.6 142 120 120 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M120 120 Q139 145.3 120 166 Q101 145.3 120 120 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M120 120 Q116.4 142 96.7 143.3 Q98 123.6 120 120 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M120 120 Q94.7 139 74 120 Q94.7 101 120 120 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M120 120 Q98 116.4 96.7 96.7 Q116.4 98 120 120 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M58 38 L78 58 L58 78 L38 58 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M58 47 L69 58 L58 69 L47 58 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M182 38 L202 58 L182 78 L162 58 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M182 47 L193 58 L182 69 L171 58 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M182 162 L202 182 L182 202 L162 182 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M182 171 L193 182 L182 193 L171 182 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M58 162 L78 182 L58 202 L38 182 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M58 171 L69 182 L58 193 L47 182 Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><circle class="rgd" style="animation-delay:-1.9s" cx="58" cy="58" r="2.6" fill="currentColor"/><circle class="rgd" style="animation-delay:-0.9s" cx="58" cy="28" r="1.7" fill="currentColor"/><circle class="rgd" style="animation-delay:-3.9s" cx="88" cy="58" r="1.7" fill="currentColor"/><circle class="rgd" style="animation-delay:-0.4s" cx="58" cy="88" r="1.7" fill="currentColor"/><circle class="rgd" style="animation-delay:-3.2s" cx="28" cy="58" r="1.7" fill="currentColor"/><circle class="rgd" style="animation-delay:-2.2s" cx="182" cy="58" r="2.6" fill="currentColor"/><circle class="rgd" style="animation-delay:-0.3s" cx="182" cy="28" r="1.7" fill="currentColor"/><circle class="rgd" style="animation-delay:-3.0s" cx="212" cy="58" r="1.7" fill="currentColor"/><circle class="rgd" style="animation-delay:-0.2s" cx="182" cy="88" r="1.7" fill="currentColor"/><circle class="rgd" style="animation-delay:-2.6s" cx="152" cy="58" r="1.7" fill="currentColor"/><circle class="rgd" style="animation-delay:-0.4s" cx="182" cy="182" r="2.6" fill="currentColor"/><circle class="rgd" style="animation-delay:-0.5s" cx="182" cy="152" r="1.7" fill="currentColor"/><circle class="rgd" style="animation-delay:-2.5s" cx="212" cy="182" r="1.7" fill="currentColor"/><circle class="rgd" style="animation-delay:-5.0s" cx="182" cy="212" r="1.7" fill="currentColor"/><circle class="rgd" style="animation-delay:-0.7s" cx="152" cy="182" r="1.7" fill="currentColor"/><circle class="rgd" style="animation-delay:-1.3s" cx="58" cy="182" r="2.6" fill="currentColor"/><circle class="rgd" style="animation-delay:-3.8s" cx="58" cy="152" r="1.7" fill="currentColor"/><circle class="rgd" style="animation-delay:-5.7s" cx="88" cy="182" r="1.7" fill="currentColor"/><circle class="rgd" style="animation-delay:-3.5s" cx="58" cy="212" r="1.7" fill="currentColor"/><circle class="rgd" style="animation-delay:-2.4s" cx="28" cy="182" r="1.7" fill="currentColor"/><circle class="rgd" style="animation-delay:-5.9s" cx="34" cy="20" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-0.3s" cx="46" cy="20" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-5.2s" cx="58" cy="20" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-1.7s" cx="70" cy="20" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-0.9s" cx="82" cy="20" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-0.7s" cx="94" cy="20" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-1.9s" cx="106" cy="20" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-4.9s" cx="118" cy="20" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-1.1s" cx="130" cy="20" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-3.5s" cx="142" cy="20" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-3.8s" cx="154" cy="20" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-2.2s" cx="166" cy="20" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-3.3s" cx="178" cy="20" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-0.4s" cx="190" cy="20" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-0.4s" cx="202" cy="20" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-1.2s" cx="220" cy="34" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-4.1s" cx="220" cy="46" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-2.6s" cx="220" cy="58" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-1.9s" cx="220" cy="70" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-3.5s" cx="220" cy="82" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-2.7s" cx="220" cy="94" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-1.8s" cx="220" cy="106" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-4.8s" cx="220" cy="118" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-4.2s" cx="220" cy="130" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-1.5s" cx="220" cy="142" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-3.4s" cx="220" cy="154" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-3.2s" cx="220" cy="166" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-5.3s" cx="220" cy="178" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-4.4s" cx="220" cy="190" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-1.7s" cx="220" cy="202" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-5.9s" cx="206" cy="220" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-0.7s" cx="194" cy="220" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-2.5s" cx="182" cy="220" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-4.5s" cx="170" cy="220" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-0.9s" cx="158" cy="220" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-2.9s" cx="146" cy="220" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-0.2s" cx="134" cy="220" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-4.0s" cx="122" cy="220" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-4.6s" cx="110" cy="220" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-3.4s" cx="98" cy="220" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-5.3s" cx="86" cy="220" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-1.9s" cx="74" cy="220" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-4.2s" cx="62" cy="220" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-3.6s" cx="50" cy="220" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-3.5s" cx="38" cy="220" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-2.7s" cx="20" cy="206" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-5.0s" cx="20" cy="194" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-5.7s" cx="20" cy="182" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-2.8s" cx="20" cy="170" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-4.0s" cx="20" cy="158" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-0.4s" cx="20" cy="146" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-4.2s" cx="20" cy="134" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-3.9s" cx="20" cy="122" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-6.0s" cx="20" cy="110" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-4.9s" cx="20" cy="98" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-1.7s" cx="20" cy="86" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-2.3s" cx="20" cy="74" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-4.0s" cx="20" cy="62" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-0.1s" cx="20" cy="50" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-2.8s" cx="20" cy="38" r="1.9" fill="currentColor"/><circle class="rgd" style="animation-delay:-1.0s" cx="120" cy="48" r="2.1" fill="currentColor"/><circle class="rgd" style="animation-delay:-0.7s" cx="168" cy="72" r="2.1" fill="currentColor"/><circle class="rgd" style="animation-delay:-0.4s" cx="120" cy="84" r="1.6" fill="currentColor"/><circle class="rgd" style="animation-delay:-4.6s" cx="192" cy="120" r="2.1" fill="currentColor"/><circle class="rgd" style="animation-delay:-0.8s" cx="168" cy="168" r="2.1" fill="currentColor"/><circle class="rgd" style="animation-delay:-1.5s" cx="156" cy="120" r="1.6" fill="currentColor"/><circle class="rgd" style="animation-delay:-2.3s" cx="120" cy="192" r="2.1" fill="currentColor"/><circle class="rgd" style="animation-delay:-5.2s" cx="72" cy="168" r="2.1" fill="currentColor"/><circle class="rgd" style="animation-delay:-0.5s" cx="120" cy="156" r="1.6" fill="currentColor"/><circle class="rgd" style="animation-delay:-2.7s" cx="48" cy="120" r="2.1" fill="currentColor"/><circle class="rgd" style="animation-delay:-3.3s" cx="72" cy="72" r="2.1" fill="currentColor"/><circle class="rgd" style="animation-delay:-5.3s" cx="84" cy="120" r="1.6" fill="currentColor"/></symbol></defs></svg>
 <div id="loader" role="status" aria-label="Loading Collect paintings">
@@ -668,6 +705,7 @@ img{pointer-events:none}
     </div>
   <a class="btn exitgal" id="exitGal" href="#home" tabindex="-1" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Exit gallery</span></a>
     <div class="hud" id="hud"><div class="walk"><button id="wBack" type="button" aria-label="Walk back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><button id="wFwd" type="button" aria-label="Walk forward"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg></button></div><div class="meter" aria-hidden="true"><i id="meterDot"></i></div></div>
+  <div class="mlist" id="mlist" hidden></div>
   <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Painting">
     <button class="x" id="lbX" type="button" aria-label="Close">×</button>
     <div class="big" id="lbBig"></div>
@@ -1167,7 +1205,7 @@ var AX = { w: 0, X: 0, tx: 0, raf: 0, cards: [], n: 0 };
 function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 function buildArtists() {
   var tr = $('aTrack'); if (tr.children.length) return;
-  var h = '<div class="a-intro"><div class="eyebrow">The artists</div><h2>Ten hands that shaped Indian art.</h2><p>Scroll sideways through a century of painters, from the court studios of Kerala to the abstract studios of Paris and Bombay.</p><span class="sl"><i></i>Keep scrolling</span></div>';
+  var h = '<div class="a-intro"><div class="eyebrow">The artists</div><h2>Ten hands that shaped Indian art.</h2><p>A century of painters, from the court studios of Kerala to the abstract studios of Paris and Bombay.</p><span class="sl"><i></i>Keep scrolling</span></div>';
   ARTISTS.forEach(function (a, i) {
     h += '<article class="ac" style="--cw:' + a.cw + 'px;--ph:' + a.ph + ';--y:' + a.y0 + ';--c1:' + a.c[0] + ';--c2:' + a.c[1] + ';--c3:' + a.c[2] + '" data-d="' + a.d + '" data-i="' + i + '">' +
       '<div class="ac-label">' + esc(a.tag) + '</div>' +
@@ -1184,14 +1222,18 @@ function buildArtists() {
   });
   svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.setAttribute('preserveAspectRatio', 'xMinYMid slice'); svg.innerHTML = p;
 }
+function isMob() { return window.matchMedia && window.matchMedia('(max-width:760px)').matches; }
 function layoutHome() {
   var vh = home.clientHeight, vw = home.clientWidth;
   home.style.setProperty('--vh', vh + 'px');
   $('walk').style.height = (vh * 3.7) + 'px';
   var tr = $('aTrack'); buildArtists();
-  AX.w = Math.max(0, tr.scrollWidth - vw);
-  $('artists').style.height = (AX.w + vh) + 'px';
-  $('aTopo').style.width = Math.max(vw * 2, 2400) + 'px';
+  if (isMob()) { AX.w = 0; $('artists').style.height = ''; }
+  else {
+    AX.w = Math.max(0, tr.scrollWidth - vw);
+    $('artists').style.height = (AX.w + vh) + 'px';
+    $('aTopo').style.width = Math.max(vw * 2, 2400) + 'px';
+  }
   homeTick();
 }
 function clamp01(v) { return Math.max(0, Math.min(1, v)); }
@@ -1221,6 +1263,7 @@ function homeTick() {
   Array.prototype.forEach.call($('ticks').children, function (el, k) { el.classList.toggle('on', k === idx); });
   $('cue').classList.toggle('off', P > 0.12);
   // artists: vertical scroll drives horizontal travel
+  if (isMob()) return;
   var aTop = $('artists').offsetTop, prog = AX.w ? clamp01((st - aTop) / AX.w) : 0;
   AX.tx = prog * AX.w;
   if (reduce) { AX.X = AX.tx; applyArtists(); } else if (!AX.raf) AX.raf = requestAnimationFrame(artistLoop);
@@ -1514,7 +1557,34 @@ function frame() {
   if (atEnd !== G.end) { G.end = atEnd; var xb = $('exitGal'); xb.classList.toggle('on', atEnd); xb.tabIndex = atEnd ? 0 : -1; xb.setAttribute('aria-hidden', atEnd ? 'false' : 'true'); }
   $('meterDot').style.left = 'calc(' + (G.max ? (G.cur / G.max * 100) : 0).toFixed(2) + '% - ' + (G.max ? G.cur / G.max * 8 : 0).toFixed(2) + 'px)';
 }
+var listSig = '';
+function buildList() {
+  var n = gallery.length, sig = gallery.join(',');
+  var host = $('mlist');
+  if (sig === listSig && host.children.length) return;
+  listSig = sig; host.innerHTML = '';
+  var h = '<div class="ml-head"><div class="eyebrow">My art gallery</div><h2>' + (n ? 'Walk the wall.' : 'The walls are bare.') + '</h2><p>' + (n ? n + (n === 1 ? ' painting' : ' paintings') + ' collected. Scroll down to walk past them, tap one to look closer.' : 'Guess a painting correctly and it will hang here for you to walk past.') + '</p></div>';
+  host.innerHTML = h;
+  gallery.forEach(function (id, i) {
+    var p = BYID[id]; if (!p) return;
+    var s = document.createElement('section'); s.className = 'mp';
+    s.innerHTML = '<button type="button" class="mp-pic" aria-label="' + esc(p.title + ', ' + p.artist) + '"><span class="cv"></span></button><div class="mp-lbl"><b></b><i></i></div>';
+    var pic = s.firstChild; pic.style.setProperty('--ar', p.ar); pic.firstChild.style.background = bgOf(p);
+    s.querySelector('b').textContent = p.title; s.querySelector('i').textContent = p.artist + ' \u00b7 ' + p.clue;
+    pic.addEventListener('click', function () { openLb(p); });
+    host.appendChild(s);
+  });
+  var e = document.createElement('div'); e.className = 'ml-end';
+  e.innerHTML = '<svg viewBox="0 0 240 240" aria-hidden="true">' + RG + '</svg><p>' + (n ? 'You have reached the end of the gallery.' : '') + '</p><a class="btn" href="#' + (n ? 'home' : 'play') + '"><span>' + (n ? 'Exit gallery' : 'Play now') + '</span></a>' + (n ? '<a class="btn ghost" href="#play"><span>Play again</span></a>' : '');
+  host.appendChild(e);
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }); }, { root: $('v-gallery'), threshold: 0.12 });
+    Array.prototype.forEach.call(host.querySelectorAll('.mp'), function (s) { io.observe(s); });
+  } else Array.prototype.forEach.call(host.querySelectorAll('.mp'), function (s) { s.classList.add('in'); });
+}
 function enterGallery() {
+  var mob = isMob(); $('v-gallery').classList.toggle('mob', mob); $('mlist').hidden = !mob;
+  if (mob) { buildList(); $('v-gallery').scrollTop = 0; cancelAnimationFrame(G.raf); return; }
   build(); G.pos = G.cur = 0; G.end = false; $('exitGal').classList.remove('on'); $('hint').classList.remove('off');
   cancelAnimationFrame(G.raf); G.raf = requestAnimationFrame(frame);
   clearTimeout(G.hintT); G.hintT = setTimeout(function () { $('hint').classList.add('off'); }, 7000);
