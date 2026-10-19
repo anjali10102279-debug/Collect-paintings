@@ -534,7 +534,7 @@ img{pointer-events:none}
 
 /* ===== mobile: vertical artists + scrolling gallery ===== */
 .mlist{display:none}
-@media (max-width:760px){
+@media (max-width:1024px), (hover:none) and (pointer:coarse){
   .artists{height:auto!important}
   .a-stage{position:relative;height:auto;overflow:visible}
   .a-stage::before,.a-topo,.a-count{display:none}
@@ -545,6 +545,9 @@ img{pointer-events:none}
   .ac{width:min(100%,380px);margin:0 auto;transform:none!important;will-change:auto}
   .ac-ph{height:auto;width:100%;aspect-ratio:4/5}
   .ac-ph .pl{inset:0;transform:none!important}
+  .rgm,.bgrg,.wallrg svg,.wallrg{animation:none!important;will-change:auto!important}
+  .artists *{animation:none!important;will-change:auto!important}
+  .artists .a-track{contain:layout paint}
   .ac h3{font-size:1.6rem}
   .ac p{font-size:16px}
   .a-end{width:auto;margin:6px 0 0;align-self:auto}
@@ -1222,7 +1225,7 @@ function buildArtists() {
   });
   svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.setAttribute('preserveAspectRatio', 'xMinYMid slice'); svg.innerHTML = p;
 }
-function isMob() { return window.matchMedia && window.matchMedia('(max-width:760px)').matches; }
+function isMob() { return window.matchMedia && window.matchMedia('(max-width:1024px), (hover:none) and (pointer:coarse)').matches; }
 function layoutHome() {
   var vh = home.clientHeight, vw = home.clientWidth;
   home.style.setProperty('--vh', vh + 'px');
